@@ -1,4 +1,4 @@
-package org.blue.dwbackendmysql.service.impl;
+package org.blue.dwbackendmysql.service;
 
 
 import org.blue.dwbackendmysql.Entity.Test;

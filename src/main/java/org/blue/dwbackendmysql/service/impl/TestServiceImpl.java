@@ -3,6 +3,7 @@ package org.blue.dwbackendmysql.service.impl;
 
 import org.blue.dwbackendmysql.Entity.Test;
 import org.blue.dwbackendmysql.mapper.TestMapper;
+import org.blue.dwbackendmysql.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
