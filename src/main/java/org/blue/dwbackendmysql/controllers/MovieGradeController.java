@@ -13,19 +13,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/movies")
+
 public class MovieGradeController {
 
     @Autowired
     private MovieGradeService movieGradeService;
 
-    @GetMapping("/grade")
+    @GetMapping("/byComment/score")
     public List<MovieGradeDTO> getMoviesByGrade(@RequestParam("grade") float grade) {
         return movieGradeService.findMovieByGrade(grade);
     }
 
-    @GetMapping("/good")
+    @GetMapping("/byComment/rate")
     public List<MovieGradeDTO> getMoviesByGood(@RequestParam("good") float good) {
-        return movieGradeService.findMovieByGrade(good);
+        return movieGradeService.findMovieByGood(good);
     }
 }

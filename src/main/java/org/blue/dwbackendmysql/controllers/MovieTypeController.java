@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/movies")
+
 public class MovieTypeController {
     @Autowired
     private MovieTypeService movieTypeService;
 
-    @GetMapping("/movieType")
+    @GetMapping("/byMovieName/count/format")
     public List<MovieTypeDTO> getMovieDetails(@RequestParam("movieName") String movieName) {
         return movieTypeService.findMoviesTypeByName(movieName);
     }

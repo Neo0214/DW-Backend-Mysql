@@ -13,8 +13,8 @@ public class MovieActService {
     @Autowired
     private MovieActMapper movieActMapper;
 
-    public List<MovieActDTO> findMovieByAct(String actName) {
-        return movieActMapper.findMoviesByAct(actName);
+    public List<MovieActDTO> findMovieByAct(String actName, String isStarring) {
+        return movieActMapper.findMoviesByAct(actName, isStarring);
     }
 
     public List<MovieActDTO> findMovieByActT(String actName) {

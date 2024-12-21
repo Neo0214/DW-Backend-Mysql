@@ -13,23 +13,23 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/movies")
+
 public class MovieTimeController {
 
     @Autowired
     private MovieTimeService movieTimeService;
 
-    @GetMapping("/YearMonth")
+    @GetMapping("/byTime/count/yearMonth")
     public List<MovieTimeDTO> getMoviesByYearMonth(@RequestParam("year") int year,@RequestParam("month") int month) {
         return movieTimeService.findMovieByYearMonth(year, month);
     }
 
-    @GetMapping("/YearSeason")
+    @GetMapping("/byTime/count/yearSeason")
     public List<MovieTimeDTO> getMoviesByYearSeason(@RequestParam("year") int year,@RequestParam("season") int season) {
         return movieTimeService.findMovieByYearSeason(year, season);
     }
 
-    @GetMapping("/StartEnd")
+    @GetMapping("/byTime/count/yearMonthDay")
     public List<MovieTimeDTO> getMoviesByStartEnd(@RequestParam("startYear") int startYear,@RequestParam("startMonth") int startMonth,@RequestParam("startDay") int startDay, @RequestParam("endYear") int endYear,@RequestParam("endMonth") int endMonth,@RequestParam("endDay") int endDay) {
         return movieTimeService.findMovieByStartEnd(startYear, startMonth, startDay, endYear, endMonth, endDay);
     }

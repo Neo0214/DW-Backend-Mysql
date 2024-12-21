@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/movies")
+
 public class MovieDirectController {
 
     @Autowired
     private MovieDirectService movieDirectService;
 
-    @GetMapping("/director")
+    @GetMapping("/director/dirmovie")
     public List<MovieDirectDTO> getMoviesByDirectorName(@RequestParam("directorName") String directorName) {
         return movieDirectService.findMoviesByDirectorName(directorName);
     }

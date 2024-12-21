@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/movies")
+
 public class MovieActController {
 
     @Autowired
     private MovieActService movieActService;
 
-    @GetMapping("/act")
-    public List<MovieActDTO> getMoviesByAct(@RequestParam("actName") String actName) {
-        return movieActService.findMovieByAct(actName);
+    @GetMapping("/byActor/count/movie")
+    public List<MovieActDTO> getMoviesByAct(@RequestParam("actName") String actName, @RequestParam("isStarring") String isStarring) {
+        return movieActService.findMovieByAct(actName, isStarring);
     }
 
     @GetMapping("/actT")
