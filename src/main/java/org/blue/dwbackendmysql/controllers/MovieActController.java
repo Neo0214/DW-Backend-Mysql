@@ -20,10 +20,10 @@ public class MovieActController {
     @Autowired
     private MovieActService movieActService;
 
-    @GetMapping("/byActor/count/movie")
-    public ResponseEntity<Map<String, Object>> getMoviesByAct(@RequestParam("actorName") String actName, @RequestParam("isStarring") String isStarring) {
+    @GetMapping("/actTF")
+    public ResponseEntity<Map<String, Object>> getMoviesByAct(@RequestParam("actorName") String actName) {
         long startTime = System.currentTimeMillis();
-        List<MovieActDTO> movieAct=movieActService.findMovieByAct(actName, isStarring);
+        List<MovieActDTO> movieAct=movieActService.findMovieByAct(actName);
         long endTime = System.currentTimeMillis();
         int num = movieAct.size();
         Map<String, Object> response = new HashMap<>();

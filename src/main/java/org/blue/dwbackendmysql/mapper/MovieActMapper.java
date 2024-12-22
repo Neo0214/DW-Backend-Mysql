@@ -10,8 +10,8 @@ import java.util.List;
 
 @Mapper
 public interface MovieActMapper {
-    @Select("select p.personName, m.movieName,m.runTime, m.commentNum, m.type, m.grade, m.year, m.month, m.day FROM person p JOIN movieAct ma ON p.personId = ma.userId JOIN movie m ON ma.movieId = m.movieId WHERE p.personName = #{actName} and ma.isStarring = #{isStarring}")
-    List<MovieActDTO> findMoviesByAct(@Param("actName")String actName,@Param("isStarring")String isStarring);
+    @Select("select p.personName, m.movieName,m.runTime, m.commentNum, m.type, m.grade, m.year, m.month, m.day FROM person p JOIN movieAct ma ON p.personId = ma.userId JOIN movie m ON ma.movieId = m.movieId WHERE p.personName = #{actName}")
+    List<MovieActDTO> findMoviesByAct(@Param("actName")String actName);
 
     @Select("select p.personName, m.movieName,m.runTime, m.commentNum, m.type, m.grade, m.year, m.month, m.day FROM person p JOIN movieAct ma ON p.personId = ma.userId JOIN movie m ON ma.movieId = m.movieId WHERE p.personName = #{actName} and ma.isStarring = 'T'")
     List<MovieActDTO> findMoviesByActT(@Param("actName")String actName);
