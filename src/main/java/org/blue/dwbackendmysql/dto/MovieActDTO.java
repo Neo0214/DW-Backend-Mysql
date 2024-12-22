@@ -12,7 +12,7 @@ public class MovieActDTO {
     private Integer day;
 
     public MovieActDTO(String actName, String movieName, int runTime, Integer commentNum, String type, Float grade, Integer year, Integer month, Integer day) {
-        ActName = actName;
+        this.ActName = actName;
         this.movieName = movieName;
         this.runTime = runTime;
         this.commentNum = commentNum != null ? commentNum : 0;

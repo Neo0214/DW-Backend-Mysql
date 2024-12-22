@@ -34,12 +34,28 @@ public class MovieActController {
     }
 
     @GetMapping("/actT")
-    public List<MovieActDTO> getMoviesByActT(@RequestParam("actName") String actName) {
-        return movieActService.findMovieByActT(actName);
+    public ResponseEntity<Map<String, Object>> getMoviesByActT(@RequestParam("actorName") String actName) {
+        long startTime = System.currentTimeMillis();
+        List<MovieActDTO> movieAct=movieActService.findMovieByActT(actName);
+        long endTime = System.currentTimeMillis();
+        int num = movieAct.size();
+        Map<String, Object> response = new HashMap<>();
+        response.put("data", movieAct);          // 查询结果
+        response.put("time", endTime - startTime); // 查询时间（毫秒）
+        response.put("num", num);
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/actF")
-    public List<MovieActDTO> getMoviesByActF(@RequestParam("actName") String actName) {
-        return movieActService.findMovieByActF(actName);
+    public ResponseEntity<Map<String, Object>> getMoviesByActF(@RequestParam("actorName") String actName) {
+        long startTime = System.currentTimeMillis();
+        List<MovieActDTO> movieAct=movieActService.findMovieByActF(actName);
+        long endTime = System.currentTimeMillis();
+        int num = movieAct.size();
+        Map<String, Object> response = new HashMap<>();
+        response.put("data", movieAct);          // 查询结果
+        response.put("time", endTime - startTime); // 查询时间（毫秒）
+        response.put("num", num);
+        return ResponseEntity.ok(response);
     }
 }
